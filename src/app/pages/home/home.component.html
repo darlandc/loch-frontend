@@ -1,7 +1,7 @@
 <p>home works!</p>
 <ul>
   <li *ngFor="let post of mylist">
-    {{ post.title.rendered }}
+    <a routerLink="'post'" (click)="getId(post.id)">{{ post.title.rendered }}</a>
   </li>
 </ul>
-<button (click)="list()">tap</button>
+<!-- <button (click)="list()">tap</button> -->

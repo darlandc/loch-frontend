@@ -15,4 +15,8 @@ export class ApiService {
     return this.http.get(this.API_URL, {});
   }
 
+  getPost(id){
+    return this.http.get(`${this.API_URL}/${id}`, {});
+  }
+
 }

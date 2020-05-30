@@ -1,5 +1,6 @@
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private api: ApiService) { }
-
+  id: any;
   mylist;
+  post;
+  currentId;
+
+  constructor(private api: ApiService, private router: Router) {
+    this.list();
+  }
 
   ngOnInit(): void {
   }
@@ -19,10 +24,14 @@ export class HomeComponent implements OnInit {
     this.api.getPosts().subscribe(
       (res) => {
         this.mylist = res;
-        console.log(this.mylist);
       },
       (err) => { console.log(err); }
     );
+  }
+
+  getId(id){
+    this.router.navigateByUrl(`/post/${id}`);
+    this.currentId = id;
   }
 
 }
