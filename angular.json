@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "loch-frontend"
+    }
+  },
+  "defaultProject": "loch-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
