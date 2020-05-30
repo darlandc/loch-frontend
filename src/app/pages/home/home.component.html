@@ -1,1 +1,7 @@
 <p>home works!</p>
+<ul>
+  <li *ngFor="let post of mylist">
+    {{ post.title.rendered }}
+  </li>
+</ul>
+<button (click)="list()">tap</button>
